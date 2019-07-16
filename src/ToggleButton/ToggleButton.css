@@ -1,0 +1,22 @@
+.btn-default.active,
+.btn-default:active,
+.open>.dropdown-toggle.btn-default {
+    color: rgb(255, 255, 255);
+    background-color: #e63232;
+    border-color: #e63232;
+}
+
+.btn-default.focus,
+.btn-default:focus {
+    color: rgb(255, 255, 255);
+    background-color: #5ac9fd;
+    border-color: 1px solid #5ac9fd;
+    border-radius: 4px;
+}
+
+.btn-default:hover {
+    color: rgb(255, 255, 255);
+    background-color: #37b9f5;
+    border-color: 1px solid #37b9f5;
+    border-radius: 4px;
+}
