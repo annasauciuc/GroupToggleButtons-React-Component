@@ -5,9 +5,10 @@ import GroupToogleButtons from "./GroupToogleButtons/GroupToggleButtons";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.toggleClass = this.toggleClass.bind(this);
+
+    this.onBtnClick = this.onBtnClick.bind(this);
     this.state = {
-      active: false,
+      selectedBtn: [],
       days: [
         "Sunday",
         "Monday",
@@ -19,20 +20,25 @@ class App extends Component {
       ]
     };
   }
-  toggleClass() {
-   
-    const currentState = this.state.active;
-    this.setState({ active: !currentState });
+
+  onBtnClick(selected) {
+    const index = this.state.selectedBtn.indexOf(selected);
+    if (index < 0) {
+      this.state.selectedBtn.push(selected);
+    } else {
+      this.state.selectedBtn.splice(index, 1);
+    }
+    this.setState({ selectedBtn: [...this.state.selectedBtn] });
   }
   render() {
-    const { days, active } = this.state;
+    const { days, selectedBtn } = this.state;
 
     return (
       <div className="container">
         <GroupToogleButtons
           days={days}
-          active={active}
-          toggleClass={this.toggleClass}
+          selectedBtn={selectedBtn}
+          onBtnClick={this.onBtnClick}
         />
       </div>
     );

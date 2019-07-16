@@ -3,7 +3,7 @@ import ToggleButton from "./../ToggleButton/ToggleButton";
 
 class GroupToogleButtons extends React.Component {
   render() {
-    const { days, toggleClass, active } = this.props;
+    const { days, onBtnClick, selectedBtn } = this.props;
     return (
       <div>
         <div className="btn-group" role="group">
@@ -12,14 +12,15 @@ class GroupToogleButtons extends React.Component {
               <ToggleButton
                 key={i}
                 day={day}
-                active={active}
-                toggleClass={toggleClass}
+                selectedBtn={selectedBtn}
+                onBtnClick={onBtnClick}
               >
                 {" "}
               </ToggleButton>
             );
           })}
         </div>
+        <p>Selected Day: {JSON.stringify(selectedBtn)}</p>
       </div>
     );
   }
