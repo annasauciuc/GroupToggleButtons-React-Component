@@ -1,20 +1,20 @@
 import React from "react";
 import "./ToggleButton.css";
 
-
 const ToggleButton = props => {
-  const { day, onBtnClick, selectedBtn } = props;
-  const active = selectedBtn.includes(day) ? "active" : "";
+  const { value, onBtnClick, selectedBtn } = props;
+  const active = selectedBtn.includes(value) ? "active" : "";
   const classes = `btn btn-primary ${active}`;
 
   return (
     <button
-      onClick={() => onBtnClick(day)}
+      onClick={() => onBtnClick(value)}
       className={classes}
-      aria-label={day}
+      aria-label={value}
       type="button"
+      value={value}
     >
-      {day}
+      {value}
     </button>
   );
 };

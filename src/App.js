@@ -10,13 +10,13 @@ class App extends Component {
     this.state = {
       selectedBtn: [],
       days: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
+        "Su",
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr",
+        "Sa"
       ]
     };
   }
@@ -34,9 +34,9 @@ class App extends Component {
     const { days, selectedBtn } = this.state;
 
     return (
-      <div className="container">
+      <div className="container centered">
         <GroupToogleButtons
-          days={days}
+          values={days}
           selectedBtn={selectedBtn}
           onBtnClick={this.onBtnClick}
         />
